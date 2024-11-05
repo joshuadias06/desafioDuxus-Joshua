@@ -1,4 +1,17 @@
+1º Commit.
 1- Rodei o projeto na minha máquina.
-2- Inclui o H2 DB como banco de dados a ser usado no projeto
-3- Criei a primeira função.
-4- Verifiquei sobre os teste da primeira função que esperava um tipo de retorno (Time) e minha função retornou uma lista. Isso na pasta ~test. A área de teste não foi uma área que estudei profundamente, sempre fazia os testes por tentativa de execução.
+2- Inclui o H2 DB como banco de dados a ser usado no projeto.
+3-Decisão do tema do "Cartola".E-sports{Valorant, Fortnite, CSGO, Apex, COD, FIFA, LOL,...} 
+
+2º Commit.
+4- Criação do método TimeDaData.
+5- Verifiquei sobre os teste da primeira função que esperava um tipo de retorno (Time) e minha função retornou uma lista.
+Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei profundamente, sempre fazia os testes por tentativa de execução.
+
+3ºCommit.
+6-Criação do método IntegranteMaisUsado.
+7-Criação do método TimeMaisComum (foi possível reutilizar a logica de filtrar data do método anterior, porém este método retorna uma lista).
+8-Criação do método funcaoMaisComum(Este já foi possivel reutilizar quase 100% do método IntegranteMaisUsado).
+9-Criação do método franquiaMaisFamosa(Este também foi possivel reutilizar o código anterior mudando apenas o que estou buscando que é a franquia mais famosa).
+10-Criação do método contagemPorFranquia(Este método foi mais simples conseguir usar o "header" do método franquiaMaisFamosa e ele me retorna um Map com String e Long = Franquia e QtdIntegrantes).
+11-Criação do método contagemPorFuncao(Da mesma forma esse método foi código reutilizado do "header" do método funcaoMaisComum).
