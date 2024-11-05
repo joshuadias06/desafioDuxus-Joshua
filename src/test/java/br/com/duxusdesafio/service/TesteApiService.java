@@ -60,9 +60,9 @@ public class TesteApiService {
     @UseDataProvider("testTimeDaDataParams")
     public void testTimeDaData(LocalDate data, List<Time> todosOsTimes, Time esperado) {
 
-        Time timeRetornado = apiService.timeDaData(data, todosOsTimes);
+        List<String> nomesRetornados = apiService.timeDaData(data, todosOsTimes);
 
-        assertEquals(esperado, timeRetornado);
+        assertEquals(esperado, nomesRetornados);
     }
 
 
