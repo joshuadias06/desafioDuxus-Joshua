@@ -1,0 +1,4 @@
+1- Rodei o projeto na minha máquina.
+2- Inclui o H2 DB como banco de dados a ser usado no projeto
+3- Criei a primeira função.
+4- Verifiquei sobre os teste da primeira função que esperava um tipo de retorno (Time) e minha função retornou uma lista. Isso na pasta ~test. A área de teste não foi uma área que estudei profundamente, sempre fazia os testes por tentativa de execução.
