@@ -15,3 +15,15 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 9-Criação do método franquiaMaisFamosa(Este também foi possivel reutilizar o código anterior mudando apenas o que estou buscando que é a franquia mais famosa).
 10-Criação do método contagemPorFranquia(Este método foi mais simples conseguir usar o "header" do método franquiaMaisFamosa e ele me retorna um Map com String e Long = Franquia e QtdIntegrantes).
 11-Criação do método contagemPorFuncao(Da mesma forma esse método foi código reutilizado do "header" do método funcaoMaisComum).
+
+4ºCommit.
+12-Inicio da API de Cadastro de Integrantes. 
+13-Criação da IntegranteRepository e IntegranteService.(Este passo usei como referência meu Projeto Integrador do semestre passado(microsserviços - CondoConnect).
+14-Criação da Controller com os endpoints de cadastro de integrante.(Este passo usei como referência meu Projeto Integrador do semestre passado(microsserviços - CondoConnect), crei um método CREATE e um READ um para criar e o outro para ler com o objetivo de verificar a crição.
+15-Teste de requisição para cadastro de Integrante usando o Insomnia. (Sucesso na criação de integrante status da requisição 201 Created, e sucesso para listar os já cadastrados). 
+16-Criei uma classe para implementar 10 integrantes assim que rodar a aplicação(Por conta que estou usando o H2 Data Base).
+
+5ºCommit.
+17-Inicio da API de Cadastro de Times.
+18-Criação da TimeRepository e TimeService.
+19-Criação da Controller com os endpoints de cadastro de integrante.(Este foi muito mais complicado que o de integrante pois o time é uma lista de integrantes e para instânciar a criação dele tive que criar uma DTO data transfer object).
