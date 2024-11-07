@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class IntegrantesIniciais implements CommandLineRunner {
 
+    @Autowired
     private final IntegranteService integranteService;
 
-    @Autowired
     public IntegrantesIniciais(IntegranteService integranteService) {
         this.integranteService = integranteService;
     }
@@ -19,7 +19,6 @@ public class IntegrantesIniciais implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (integranteService.listarIntegrantes().isEmpty()) {
-            // Adicionando os 10 integrantes
             Integrante[] integrantes = new Integrante[] {
                     new Integrante("Valorant", "Aspas", "Fragger", null),
                     new Integrante("Fortnite", "Bugha", "IGL", null),

@@ -27,3 +27,12 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 17-Inicio da API de Cadastro de Times.
 18-Criação da TimeRepository e TimeService.
 19-Criação da Controller com os endpoints de cadastro de integrante.(Este foi muito mais complicado que o de integrante pois o time é uma lista de integrantes e para instânciar a criação dele tive que criar uma DTO data transfer object).
+
+6ºCommit.
+20-Ajuste de erro na classe que sube para o banco integrantes asssim que a aplicação roda.
+21-Criação da tela de cadastro de integrantes(HTML,CSS,JS).
+22-Feito um Form com 3 campos (Franquia, Nome, Função).
+23-Criado um menu simples para navegar entre o cadastro de times e tela de métodos.
+24-Feito em JS o fetch para mandar para a API os dados do formulário em formato JSON.
+25-Teste do fetch(1º Tentativa erro, foi preciso adicionar o Cross Origin na controler de cadastro para qualquer endereço conseguir fazer requisições, 2º tentativa = "sucesso!").
+
