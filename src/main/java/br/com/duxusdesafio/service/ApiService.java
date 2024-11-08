@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Service que possuirá as regras de negócio para o processamento dos dados

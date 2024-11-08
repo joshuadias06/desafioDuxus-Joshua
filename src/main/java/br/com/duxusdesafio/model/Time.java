@@ -1,12 +1,15 @@
 package br.com.duxusdesafio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
-
 @Entity
 @Table(name = "time")
+@JsonIgnoreProperties("composicaoTime")
 public class Time {
 
 	@Id
@@ -14,13 +17,13 @@ public class Time {
 	private long id;
 
 	@Column
-    private LocalDate data;
-	
-	@OneToMany(mappedBy = "time", cascade = CascadeType.ALL)
+	private LocalDate data;
+
+	@OneToMany(mappedBy = "time", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonManagedReference
 	private List<ComposicaoTime> composicaoTime;
 
-	public Time() {
-	}
+	public Time() {}
 
 	public Time(LocalDate data, List<ComposicaoTime> composicaoTime) {
 		this.data = data;
@@ -51,7 +54,6 @@ public class Time {
 		this.composicaoTime = composicaoTime;
 	}
 
-
 	@Override
 	public final boolean equals(Object o) {
 		if (this == o) return true;
@@ -70,6 +72,7 @@ public class Time {
 		return "Time{" +
 				"id=" + id +
 				", data=" + data +
+				", composicaoTime=" + composicaoTime +
 				'}';
 	}
 }

@@ -1,22 +1,26 @@
 package br.com.duxusdesafio.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-
 @Entity
 @Table(name = "composicao_time")
 public class ComposicaoTime {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@ManyToOne
+	@JoinColumn(name = "time_id")
+	@JsonBackReference
 	private Time time;
 
 	@ManyToOne
+	@JoinColumn(name = "integrante_id")
 	private Integrante integrante;
 
 	public ComposicaoTime() {

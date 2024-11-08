@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Integrante</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
+    <title>Cadastro de Time</title>
+    <link rel="stylesheet" href="styleTime.css">
+    <script src="/cadastro_time/scriptTime.js" defer></script>
 </head>
-
 <body>
     <header>
         <div class="logo">Carto<span>Games</span></div>
@@ -25,30 +24,27 @@
                         <li><a href="#">Opção 7</a></li>
                     </ul>
                 </li>
-                <li><a href="/cadastro_time/indexTime.html"><button class="cadastrar-time">Cadastrar Time</button></a></li>
+                <li><a href="/index.html"><button class="cadastrar-time">Cadastrar Integrantes</button></a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <form>
-            <h1>Carto<span>Games</span></h1>
-            <p>Cadastre um Integrante</p>
+        <div class="form-container">
+            <form id="teamForm">
+                <h1>Cadastro de <span>Time</span></h1>
+                <p>Informe o nome do time e selecione os integrantes</p>
+                
+                <div class="input-container">
+                    <input id="teamDate" type="date" required>
+                </div>
 
-            <div class="input-container">
-                <input class="franquia" placeholder="Franquia" type="text" required>
-            </div>
+                <div class="members-list">
+                </div>
 
-            <div class="input-container">
-                <input class="nome" placeholder="Nome" type="text" required>
-            </div>
-            
-            <div class="input-container">
-                <input class="funcao" placeholder="Função" type="text" required>
-            </div>
-            
-            <button type="submit" class="submit-button">Cadastrar</button>
-        </form>
+                <button type="submit" class="submit-button">Cadastrar Time</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

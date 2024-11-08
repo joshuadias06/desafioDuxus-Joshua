@@ -36,3 +36,13 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 24-Feito em JS o fetch para mandar para a API os dados do formulário em formato JSON.
 25-Teste do fetch(1º Tentativa erro, foi preciso adicionar o Cross Origin na controler de cadastro para qualquer endereço conseguir fazer requisições, 2º tentativa = "sucesso!").
 
+7ºCommit.
+
+
+26-Neste commit tive a experiências mais complexas com StackOverFlow pois ao mandar o fetch do front-end criando um time o código quebrava, fui pesquisar sobre o erro e consegui descobrir uma anotação que resolve esse problema da biblioteca Jackson
+27-Criação da tela de criação de time(ela lista o time e tem um input de data para selecionar a data de criação).
+28-Tive que resolver um erro de requisição POST que estava dando ao enviar para a API os dados.
+29-No início da construção da criação de time não estava sendo cadastrado os integrantes no time, quando fazia uma requisição de GET para listar ele me retornava um objeto somente com o ID prenchido e com a data null. O Problema foi resolvido na classe Timecontroller e a DTO, o erro era devido a estar setando somente a data e nao os integrantes, e a data aparecia vazia pois estava enviando no formato String não no formato LocalDate.
+30-Link Front x API feito com 100% de sucesso até o momento.
+31-Teste de requisão POST e GET feitos pelo Insomnia.
+32-No início do desenvolvimento desse commit tive que parar e voltar ao ultímo commit o código estava quebrando, e para poupar tempo retomei a ultima versão dele já que ainda estava no começo.  

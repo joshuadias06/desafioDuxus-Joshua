@@ -8,16 +8,14 @@ import br.com.duxusdesafio.service.IntegranteService;
 import br.com.duxusdesafio.service.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("cartogames/times")
+@CrossOrigin("*")
 public class TimeController {
 
     @Autowired
@@ -27,19 +25,50 @@ public class TimeController {
     private IntegranteService integranteService;
 
     @PostMapping("/cadastro")
-    public ResponseEntity<Time> cadastrarTime(@RequestBody TimeDTO timeDTO) {
+    public ResponseEntity<TimeDTO> cadastrarTime(@RequestBody TimeDTO timeDTO) {
+        Time novoTime = new Time();
+
+        if (timeDTO.getData() != null) {
+            try {
+                novoTime.setData(timeDTO.getData());
+            } catch (DateTimeParseException e) {
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
         List<Integrante> integrantes = integranteService.listarIntegrantes()
                 .stream()
-                .filter(integrante -> timeDTO.getIntegranteIds().contains(integrante.getId()))
+                .filter(integrante -> timeDTO.getIntegrantes().contains(integrante.getNome()))
                 .collect(Collectors.toList());
 
-        Time novoTime = new Time();
-        novoTime.setData(timeDTO.getData());
-        novoTime.setComposicaoTime(integrantes.stream()
+        if (integrantes.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        List<ComposicaoTime> composicoes = integrantes.stream()
                 .map(integrante -> new ComposicaoTime(novoTime, integrante))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
+
+        novoTime.setComposicaoTime(composicoes);
 
         Time timeSalvo = timeService.criarTime(novoTime);
-        return ResponseEntity.ok(timeSalvo);
+
+        TimeDTO timeDTOResposta = new TimeDTO(timeSalvo.getId(), timeSalvo.getData(),
+                timeSalvo.getComposicaoTime().stream()
+                        .map(composicao -> composicao.getIntegrante().getNome())
+                        .collect(Collectors.toList()));
+
+        return ResponseEntity.ok(timeDTOResposta);
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity<List<Time>> listarTimes() {
+        List<Time> times = timeService.listarTodosTimes();
+
+        if (times.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(times);
     }
 }
