@@ -84,5 +84,48 @@ public class ServiceController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/franquiaMaisFamosa")
+    public ResponseEntity<?> franquiaMaisFamosa(@RequestParam(value = "dataInicial", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInicial, @RequestParam(value = "dataFinal", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate dataFinal){
 
+        List<Time> todosOsTimes = timeRepository.findAll();
+        String franquiaMaisFamosa = apiService.franquiaMaisFamosa(dataInicial, dataFinal, todosOsTimes);
+        if(franquiaMaisFamosa == null){
+            return ResponseEntity.notFound().build();
+        }
+        Map<String, String> response = new HashMap<>();
+        response.put("Franquia", franquiaMaisFamosa);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/contagemPorFranquia")
+    public ResponseEntity contagemPorFranquia(@RequestParam(value = "dataInicial", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInicial, @RequestParam(value = "dataFinal", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate dataFinal){
+
+        List<Time> todosOsTimes = timeRepository.findAll();
+        Map<String, Long> contagemPorFranquia = apiService.contagemPorFranquia(dataInicial, dataFinal, todosOsTimes);
+
+        if(contagemPorFranquia.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        Map<String, Object> response = new HashMap<>();
+        response.put("Franquia", contagemPorFranquia);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/contagemPorFuncao")
+    public ResponseEntity<?> contagemPorFuncao(@RequestParam(value = "dataInicial", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInicial, @RequestParam(value = "dataFinal", required = false)@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate dataFinal){
+
+        List<Time> todosOsTimes = timeRepository.findAll();
+        Map<String, Long> contagemPorFuncao = apiService.contagemPorFuncao(dataInicial, dataFinal, todosOsTimes);
+
+        if(contagemPorFuncao.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("Funcao", contagemPorFuncao);
+
+        return ResponseEntity.ok(response);
+    }
 }

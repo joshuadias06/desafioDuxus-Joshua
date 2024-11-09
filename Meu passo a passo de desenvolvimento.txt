@@ -45,7 +45,6 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 31-Teste de requisão POST e GET feitos pelo Insomnia.
 32-No início do desenvolvimento desse commit tive que parar e voltar ao ultímo commit o código estava quebrando, e para poupar tempo retomei a ultima versão dele já que ainda estava no começo.  
 
-
 8ºCommit.
 33-Atualização no Front-end; Retirei o menu que tinha 7 opções de telas(um para cada método), e fiz uma única tela que irá, exibir mandar os parâmetros pra o front end e irá receber a reposta conforme exemplificado no README do desafio.
 34-Criação da classe ServiceController que será responsável por processar os dados usando os métodos da classe ApiService.
@@ -56,4 +55,12 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 39-Criação do endpoint timeMaisUsado.(JSON retorna uma lista de nome dos integrantes que mais compõem times).
 40-Teste de endpoint deu sucesso de primeira.(A aplicação do método só retorna um lista simples com apenas um dado).
 41-Criação do endpoint funcaoMaisComum.(JSON retorna a funcao com o numero de vezes que se repete a função entre os integrantes).
-42-Teste Teste de endpoint deu sucesso de primeira.(A aplicação do método só retorna a função com o número de repetições dela, consegui reutilizar a response do endpoint integranteMaisUsado que retornava "nome" = "quantidade de escalação).
+42-Teste de endpoint deu sucesso de primeira.(A aplicação do método só retorna a função com o número de repetições dela, consegui reutilizar a response do endpoint integranteMaisUsado que retornava "nome" = "quantidade de escalação).
+
+9ºCommit.
+43-Criação do endpoint franquiaMaisFamosa(JSON retorna o nome da franquia mais famosa).
+44-Teste de endpoint deu sucesso de primeira.(A aplicação do método só retorna o nome da franquia mais famosa).
+45-Criação do endpoint contagemPorFranquia(JSON retorna uma lista de franquias com a quantidade de jogadores pertencentes a franquia).
+46-Teste de endpoint deu sucesso de primeira.(A aplicação retorna um lista de franquias com a quantidade de jogadores pertencentes a franquia).
+47-Criação do endpoint contagemPorFuncao(JSON retorna uma lista de funções com a quantidade de jogadores que fazem a função).
+48-Teste de endpoint deu sucesso de primeira.(A aplicação retorna um lista de funções com a quantidade de jogadores que fazem a função).
