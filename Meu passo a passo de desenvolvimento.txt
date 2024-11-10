@@ -64,3 +64,13 @@ Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei
 46-Teste de endpoint deu sucesso de primeira.(A aplicação retorna um lista de franquias com a quantidade de jogadores pertencentes a franquia).
 47-Criação do endpoint contagemPorFuncao(JSON retorna uma lista de funções com a quantidade de jogadores que fazem a função).
 48-Teste de endpoint deu sucesso de primeira.(A aplicação retorna um lista de funções com a quantidade de jogadores que fazem a função).
+
+10ºCommit.
+49-Início da criação da tela para exibir o resultado dos métodos.
+50-Layout da página concluida.
+51-Início da construção do fetch com a API.
+52-Teste do Fetch(Estava respondendo todos menos o timeDaData, pois estava mandando do front dois parametros de data também"Data inicial e Data Final", enquanto o método esperava receber apenas o parametro Data).
+53-Mudei o estilo de fetch para prevenir erros de requisição, estava mandando requisição para todos os metodos de uma vez, e o timeDaData, estava sempre quebrando.
+54-Criação de um arquivo markdown mostrando os teste de requisição feitos durante o desenvolvimento do desafio.
+55-Passo a Passo para rodar o Sistema em um novo computador.
+

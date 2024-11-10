@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário CartoGames</title>
+    <link rel="stylesheet" href="styleMetodo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Carto<span>Games</span></div>
+        <nav>
+            <ul class="menu">
+                <li><a href="/index.html"><button class="cadastrar-time">Cadastrar Integrantes</button></a></li>
+                <li><a href="/cadastro_time/indexTime.html"><button class="cadastrar-time">Cadastrar Time</button></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form id="questionario-form">
+            <h1>Questionário Carto<span>Games</span></h1>
+            <p>Preencha as informações abaixo</p>
+
+            <div class="input-container">
+                <label>Time da Data</label>
+                <div class="date-inputs">
+                    <input type="date" id="timeDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="timeDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaTimeDaData"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Integrante Mais Usado</label>
+                <div class="date-inputs">
+                    <input type="date" id="integranteDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="integranteDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaIntegranteMaisUsado"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Time Mais Comum</label>
+                <div class="date-inputs">
+                    <input type="date" id="timeComumDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="timeComumDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaTimeMaisComum"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Função Mais Comum</label>
+                <div class="date-inputs">
+                    <input type="date" id="funcaoDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="funcaoDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaFuncaoMaisComum"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Franquia Mais Famosa</label>
+                <div class="date-inputs">
+                    <input type="date" id="franquiaDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="franquiaDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaFranquiaMaisFamosa"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Contagem por Franquia</label>
+                <div class="date-inputs">
+                    <input type="date" id="contagemFranquiaDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="contagemFranquiaDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaContagemPorFranquia"></div>
+            </div>
+
+            <div class="input-container">
+                <label>Contagem por Função</label>
+                <div class="date-inputs">
+                    <input type="date" id="contagemFuncaoDataInicial" class="date">
+                    <span>até</span>
+                    <input type="date" id="contagemFuncaoDataFinal" class="date">
+                </div>
+                <div class="resposta-api" id="respostaContagemPorFuncao"></div>
+            </div>
+
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+    </div>
+
+    <script src="scriptMetod.js"></script>
+</body>
+</html>

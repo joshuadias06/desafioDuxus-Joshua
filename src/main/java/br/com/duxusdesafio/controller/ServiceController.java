@@ -24,12 +24,13 @@ public class ServiceController {
     private TimeRepository timeRepository;
 
     @GetMapping("/timeDaData")
-    public ResponseEntity<?> timeDaData(@RequestParam("data") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data){
+    public ResponseEntity<?> timeDaData(
+            @RequestParam("data") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate data) {
 
         List<Time> todosOsTimes = timeRepository.findAll();
         List<String> integrantes = apiService.timeDaData(data, todosOsTimes);
 
-        if(integrantes.isEmpty()){
+        if (integrantes.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 

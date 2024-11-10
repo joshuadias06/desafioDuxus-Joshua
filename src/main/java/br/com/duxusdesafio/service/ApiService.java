@@ -24,27 +24,28 @@ public class ApiService {
 
     public List<String> timeDaData(LocalDate data, List<Time> todosOsTimes) {
         /**
-         *Inicia com uma lista vazia,depois um for each e verifica a data do time é igual a passada.
+         *
          */
+
         List<String> nomes = new ArrayList<>();
+
         for (Time time : todosOsTimes) {
             if (time.getData().equals(data)) {
-                //Percorre e adiciona o nome do Integrante.
                 for (ComposicaoTime composicao : time.getComposicaoTime()) {
                     nomes.add(composicao.getIntegrante().getNome());
                 }
-                return nomes;
             }
         }
-        return Collections.emptyList();
+        return nomes.isEmpty() ? Collections.emptyList() : nomes;
     }
+
 
     public Integrante integranteMaisUsado(LocalDate dataInicial, LocalDate dataFinal, List<Time> todosOsTimes) {
         /**
-         * Cria um map(Map)contando as reincidência de cada jogador,
+         * Inicio com um map(Map)contando as reincidência de cada jogador,
          * filtra(filter) os times pelas datas passadas como parametro
-         *mostra a formação do time, puxa os integrantes e conta os integrantes.
-         * e no return encontra o jogador mais usado na escalação de todos os times.
+         *mostro a formação do time, puxo os integrantes e conto os integrantes.
+         * e no return encontro o jogador mais usado na escalação de todos os times.
          */
         Map<Integrante, Long> contagemIntegrantes = todosOsTimes.stream()
                 .filter(time -> (dataInicial == null || !time.getData().isBefore(dataInicial)) &&
