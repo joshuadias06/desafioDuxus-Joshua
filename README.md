@@ -4,7 +4,7 @@
 
 ### 1. Clonando o Projeto
 
-Primeiro, clone o repositório para o seu ambiente local. Abra o terminal e execute o seguinte comando:
+Primeiro, clone o repositório para o seu ambiente local. Abra o Git Bash e execute o seguinte comando:
 
 ```bash
 git clone git@github.com:joshuadias06/desafioDuxus-Joshua.git
