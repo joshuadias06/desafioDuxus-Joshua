@@ -6,7 +6,7 @@
 2º Commit.
 4- Criação do método TimeDaData.
 5- Verifiquei sobre os teste da primeira função que esperava um tipo de retorno (Time) e minha função retornou uma lista.
-Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudei profundamente, sempre fazia os testes por tentativa de execução.
+Isso na pasta ~test. A área de teste não foi uma área que nunca havia estudado profundamente, sempre fazia os testes por tentativa de execução.
 
 3ºCommit.
 6-Criação do método IntegranteMaisUsado.
